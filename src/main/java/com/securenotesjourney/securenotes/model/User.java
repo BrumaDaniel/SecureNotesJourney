@@ -2,6 +2,8 @@ package com.securenotesjourney.securenotes.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "users_table")
 public class User {

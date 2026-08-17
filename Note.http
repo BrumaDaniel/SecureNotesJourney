@@ -1,0 +1,15 @@
+
+### POST create a new note
+POST http://localhost:8080/notes/user/1/newNote
+Content-Type: application/json
+
+{
+  "title": "title1",
+  "noteContent": "content1"
+}
+
+### Get note by ID
+GET http://localhost:8080/notes/1
+
+### GET all notes
+GET http://localhost:8080/notes
