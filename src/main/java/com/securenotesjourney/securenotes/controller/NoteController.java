@@ -4,6 +4,8 @@ import com.securenotesjourney.securenotes.model.Note;
 import com.securenotesjourney.securenotes.model.User;
 import com.securenotesjourney.securenotes.repository.NoteRepository;
 import com.securenotesjourney.securenotes.repository.UserRepository;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,5 +44,16 @@ public class NoteController {
         }
         note.setUser(user.get());
         return ResponseEntity.ok(noteRepository.save(note));
+    }
+
+    @PersistenceContext
+    private EntityManager entityManager;
+
+    @GetMapping("/search")
+    @SuppressWarnings("unchecked")
+    public List<Note> searchNotes(@RequestParam String title) {
+        String query = "SELECT * FROM notes_table WHERE title = '" + title + "'";
+        // [INTENTIONAL VULN #7] SQL injection - user input concatenated into query
+        return entityManager.createNativeQuery(query, Note.class).getResultList();
     }
 }

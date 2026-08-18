@@ -9,6 +9,6 @@ POST http://localhost:8080/users/register
 Content-Type: application/json
 
 {
-  "username": "ana2",
+  "username": "cristi",
   "password": "parola123"
 }

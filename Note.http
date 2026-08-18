@@ -1,10 +1,10 @@
 
 ### POST create a new note
-POST http://localhost:8080/notes/user/1/newNote
+POST http://localhost:8080/notes/user/3
 Content-Type: application/json
 
 {
-  "title": "title1",
+  "title": "title user3",
   "noteContent": "content1"
 }
 
@@ -13,3 +13,9 @@ GET http://localhost:8080/notes/1
 
 ### GET all notes
 GET http://localhost:8080/notes
+
+### GET search notes by title (normal)
+GET http://localhost:8080/notes/search?title=title1
+
+### GET search - SQL injection (returns ALL notes)
+GET http://localhost:8080/notes/search?title=%27%20OR%20%271%27%3D%271
