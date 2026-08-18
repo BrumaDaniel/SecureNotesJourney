@@ -25,6 +25,7 @@ step — with the git history, tests, and CI/CD pipeline telling the whole story
 | 4 | Authentication disabled on all endpoints | A07:2021 Auth Failures | [#4](../../issues/4) | 🔴 Open |
 | 5 | IDOR — notes created for any user via URL id | A01:2021 Broken Access Control | [#5](../../issues/5) | 🔴 Open |
 | 6 | CSRF disabled with cookie-based sessions | A01:2021 Broken Access Control | [#6](../../issues/6) | 🔴 Open |
+| 7 | SQL injection in note search | A03:2021 Injection | [#7](../../issues/7) | 🔴 Open |
 
 ## Tech stack
 
